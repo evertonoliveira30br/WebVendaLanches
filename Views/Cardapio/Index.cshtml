@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebVendaLanches.Models.Cardapio>
+@{
+    ViewBag.Title = "Nosso Cárdapio de Lanches";
+}
+
+<h2>NOSSO CARDÁPIO</h2>
+
+<p>
+    @Html.ActionLink("Fazer Pedido", "Create")
+</p>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+
+    <table id="tabelaCardapio" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Código do Lanche</th>
+                <th>Lanche</th>
+                <th>Ingredientes</th>
+                <th>Valor do Lanche</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.LancheId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Lanche)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ingredientes)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PrecoLanche)</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+
+</div>
+
