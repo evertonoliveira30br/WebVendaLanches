@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebVendaLanches", "WebVenda
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebVendaLanches.Tests", "..\WebVendaLanches.Tests\WebVendaLanches.Tests.csproj", "{0A2840D1-5F06-402D-9594-13558962BE32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "consoleTest", "..\consoleTest\consoleTest.csproj", "{1961E115-7B96-47BF-93E4-B1B216680730}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{0A2840D1-5F06-402D-9594-13558962BE32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A2840D1-5F06-402D-9594-13558962BE32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A2840D1-5F06-402D-9594-13558962BE32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1961E115-7B96-47BF-93E4-B1B216680730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1961E115-7B96-47BF-93E4-B1B216680730}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1961E115-7B96-47BF-93E4-B1B216680730}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1961E115-7B96-47BF-93E4-B1B216680730}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

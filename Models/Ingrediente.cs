@@ -12,7 +12,7 @@ namespace WebVendaLanches.Models
     public class Ingrediente
     {
         public int IngredienteId { get; set; }
-        public string  Descricao { get; set; }
+        public string Descricao { get; set; }
         public decimal Valor { get; set; }
         public int Quantidade { get; set; }
         public int LancheId { get; set; }

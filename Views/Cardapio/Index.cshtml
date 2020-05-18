@@ -3,11 +3,8 @@
     ViewBag.Title = "Nosso Cárdapio de Lanches";
 }
 
-<h2>NOSSO CARDÁPIO</h2>
+<h2>CARDÁPIO DE LANCHES</h2>
 
-<p>
-    @Html.ActionLink("Fazer Pedido", "Create")
-</p>
 
 <div class="row wrapper border-bottom white-bg page-heading">
 
@@ -18,6 +15,7 @@
                 <th>Lanche</th>
                 <th>Ingredientes</th>
                 <th>Valor do Lanche</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -28,13 +26,45 @@
                     <td>@Html.DisplayFor(modelItem => item.LancheId)</td>
                     <td>@Html.DisplayFor(modelItem => item.Lanche)</td>
                     <td>@Html.DisplayFor(modelItem => item.Ingredientes)</td>
-                    <td>@Html.DisplayFor(modelItem => item.PrecoLanche)</td>
+                    @if (item.LanchePersonalizado)
+                    {
+                        <td>------</td>
+                    }
+                    else
+                    {
+                        <td>@Html.DisplayFor(modelItem => item.PrecoLanche)</td>
+
+                    }
+
+                    <td>
+
+                        <a name="fazerPedido" href="#" class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-ok"></span> Selecionar
+                        </a>
+
+                    </td>
+
                 </tr>
             }
 
         </tbody>
     </table>
 
-
 </div>
 
+@section Scripts {
+    <script type="text/javascript">
+            $(document).ready(function () {               
+                                
+                $('a[name="fazerPedido"]').click(function () {
+                    let $tdLancheId = $(this).closest('tr').find('td').eq(0);
+
+                    let lancheId = parseInt($tdLancheId.text());
+                                                                         
+                    window.location.href = "/Pedido/Index?lancheId=" + lancheId;
+                });               
+
+
+            });
+    </script>
+}

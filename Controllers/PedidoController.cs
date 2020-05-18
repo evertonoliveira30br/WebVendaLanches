@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Antlr.Runtime.Tree;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,13 @@ namespace WebVendaLanches.Controllers
         private Pedido pedido = new Pedido();
 
         // GET: Pedido
-        public ActionResult Index()
+        public ActionResult Index(int lancheId)
         {
-            return View(pedido.Ingredientes(5));
+            LancheRepository repositoryLanche = new LancheRepository();
+
+            ViewBag.NomeLanche = repositoryLanche.GetById(lancheId).Descricao;
+
+            return View(pedido.Ingredientes(lancheId));
         }
 
         [HttpPost]

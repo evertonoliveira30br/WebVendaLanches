@@ -15,7 +15,9 @@ namespace WebVendaLanches.Models
         public int LancheId { get; set; }
         public string Lanche { get; set; }
         public string Ingredientes { get; set; }
-        public decimal PrecoLanche { get; set; }        
+        public decimal PrecoLanche { get; set; } 
+        
+        public bool LanchePersonalizado { get; set; }
         
     }
 
@@ -50,6 +52,7 @@ namespace WebVendaLanches.Models
                             p.Lanche = reader["Lanche"].ToString();
                             p.LancheId = (int)reader["LancheId"];
                             p.PrecoLanche = (decimal)reader["PrecoLanche"];
+                            p.LanchePersonalizado = (bool)reader["LanchePersonalizado"];
 
                             list.Add(p);
                         }
